@@ -29,9 +29,9 @@ app.post('/', async (req, res) => {
 
   try {
     const completion = await openAI.createCompletion({
-      model: "gpt-3.5-turbo",
-      prompt: message,
+      model: "text-davinci-003",
       max_tokens: 4000,
+      prompt: message,
       temperature: 0.7,
       top_p: 1,
     })

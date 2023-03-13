@@ -33,7 +33,6 @@ app.post('/', async (req, res) => {
       max_tokens: 4000,
       prompt: message,
       temperature: 0.7,
-      top_p: 1,
     })
     res.json({ message: completion.data.choices[0].text })
   } catch (error) {

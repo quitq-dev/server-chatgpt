@@ -29,10 +29,11 @@ app.post('/', async (req, res) => {
 
   try {
     const completion = await openAI.createCompletion({
-      model: "text-davinci-003",
+      model: "gpt-3.5-turbo",
       prompt: message,
       max_tokens: 4000,
-      temperature: .5
+      temperature: 0.7,
+      top_p: 1,
     })
     res.json({ message: completion.data.choices[0].text })
   } catch (error) {
